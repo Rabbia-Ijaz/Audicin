@@ -7,32 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D60DCA1F-E811-4BFA-B4A2-812F4DD8080B"
-            shouldBeEnabled = "Yes"
+            uuid = "66E3BAF8-7901-4587-BACE-3BEA3235D63D"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Audicin/ViewModel/StepCountViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "loadStepCounts()"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "fetchStepData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8765BC6C-1D12-43D3-A390-916E50BA9917"
+            uuid = "C44F84AA-9AAD-4315-897A-65A3E92AEDB2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Audicin/ViewModel/StepCountViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "loadStepCounts()"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "fetchStepData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

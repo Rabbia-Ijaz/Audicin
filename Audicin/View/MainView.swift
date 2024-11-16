@@ -8,56 +8,41 @@
 import SwiftUI
 import Charts
 
-struct ContentView: View {
-    
-    let weeklySteps: [StepData] = [
-        StepData(day: "Mon", steps: 3000),
-        StepData(day: "Tue", steps: 5000),
-        StepData(day: "Wed", steps: 7000),
-        StepData(day: "Thu", steps: 4000),
-        StepData(day: "Fri", steps: 8000),
-        StepData(day: "Sat", steps: 6000),
-        StepData(day: "Sun", steps: 9000)
-    ]
-    
-    @StateObject private var viewModel = StepCountViewModel()
+struct MainView: View {
+   
+    @StateObject private var viewModel = MainViewModel()
     
     var body: some View {
         ZStack{
-            Color.customPurple.ignoresSafeArea()
+            Color("customYellow").opacity(0.2).ignoresSafeArea()
             VStack(spacing: 10) {
-                
-                Text("Weekly Activity & Playlists")
-                    .font(.system(size: 24, weight: .black))
-                    .padding(.top,30)
                 Spacer()
-                VStack(spacing: 10) {
-                    Image(systemName: "figure.walk")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 40)
-                        .foregroundStyle(.white)
-                    
-                    Text("Step Count")
-                        .font(.system(size: 24, weight: .bold))
-                        .foregroundStyle(.white)
-                    Text("5000")
-                        .font(.system(size: 30, weight: .light))
-                        .foregroundStyle(.white)
-                }
-                .padding(20)
-                .cornerRadius(10)
-                .background(Color.customBlue)
-                .cornerRadius(20)
-                .shadow(color: .gray.opacity(20), radius: 15, x: 0,y: 0)
                 
+                stepsProgressView
+                
+                Spacer()
+                
+                averageStepsView
+                
+                VStack {
+                    if !viewModel.weeklyStepCounts.isEmpty {
+                        chartView
+                    } else if let error = viewModel.error {
+                        Text("Error: \(error.localizedDescription)")
+                    } else {
+                        ProgressView("Loading step data...")
+                    }
+                }
                 Button(action: {
                     
                 }, label: {
                     HStack {
-                        Text("Open Playlist")
+                        Image(systemName: "music.note")
+                            .foregroundStyle(Color.customYellow1)
+                        Text("Play Music")
                             .font(.system(size: 20, weight: .black))
-                            .foregroundStyle(Color.white)
+                            .foregroundStyle(Color.customYellow1)
+                        
                     }
                     .frame(height: 54)
                     .padding(.horizontal,20)
@@ -66,60 +51,103 @@ struct ContentView: View {
                 })
                 .padding(.top,30)
                 
-                
-                Spacer()
-                
-                //                chartView
-//                VStack {
-//                    if !viewModel.weeklyStepCounts.isEmpty {
-//                        List(viewModel.weeklyStepCounts.sorted(by: { $0.key < $1.key }), id: \.key) { date, steps in
-//                            VStack(alignment: .leading) {
-//                                Text("\(date.formatted(.dateTime.month().day()))")
-//                                    .font(.headline)
-//                                Text("\(steps) steps")
-//                                    .font(.subheadline)
-//                            }
-//                        }
-//                    } else if let error = viewModel.error {
-//                        Text("Error: \(error.localizedDescription)")
-//                    } else {
-//                        ProgressView("Loading step data...")
-//                    }
-//                }
-//                .onAppear {
-//                    viewModel.loadStepCounts()
-//                }
-                
                 Spacer()
                 
             }
         }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+            updateProgress() // Refresh progress when app enters the foreground
+        }
+        .onChange(of: viewModel.todayStepCount) {
+            updateProgress() // Update progress when today's step count changes
+        }
+        .onChange(of: viewModel.weeklyStepCounts) {
+            updateProgress() // Update progress when weekly step counts change
+        }
+        .onAppear {
+            updateProgress()
+        }
+    }
+    
+    
+    var stepsProgressView: some View {
+        ZStack {
+            Circle()
+                .stroke(Color.customBlue.opacity(0.2), lineWidth: 20) // Background circle
+            Circle()
+                .trim(from: 0.0, to: viewModel.progress) // Trim based on progress
+                .stroke(Color.customBlue, style: StrokeStyle(lineWidth: 20, lineCap: .round))
+                .rotationEffect(.degrees(-90)) // Start from top
+                .animation(.easeInOut, value: viewModel.progress) // Animate changes
+            
+            VStack(spacing: 10) {
+                Image(systemName: "figure.walk")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 20)
+                    .foregroundStyle(.customPink)
+                
+                Text("\(viewModel.todayStepCount)")
+                    .font(.system(size: 50, weight: .black))
+                    .foregroundStyle(.customPink)
+                Text("Goal \(viewModel.averageSteps) Steps")
+                    .font(.system(size: 14, weight: .regular))
+                    .foregroundStyle(.customDarkBlue)
+            }
+        }
+        .frame(width: 250, height: 250)
+    }
+    
+    var averageStepsView: some View {
+       HStack {
+            VStack(alignment: .leading,spacing: 5) {
+                Text("Avg")
+                    .font(.system(size: 16, weight: .medium))
+                    .foregroundStyle(Color.customDarkBlue)
+                HStack(alignment:.bottom){
+                    Text("\(viewModel.averageSteps)")
+                        .font(.system(size: 26, weight: .black))
+                        .foregroundStyle(Color.customDarkBlue)
+                    Text("steps in this week")
+                        .font(.system(size: 16, weight: .regular))
+                        .foregroundStyle(Color.customDarkBlue)
+                }
+            }
+            Spacer()
+            
+        }.padding(.horizontal,40)
     }
     
     var chartView: some View {
         Chart {
-            ForEach(weeklySteps) { data in
+            ForEach(viewModel.weeklyStepCounts.sorted(by: { $0.key < $1.key }), id: \.key) { date, steps in
                 BarMark(
-                    x: .value("Day", data.day),
-                    y: .value("Steps", data.steps)
+                    x: .value("Day", date.formatted(.dateTime.weekday(.abbreviated))),
+                    y: .value("Steps", steps)
                 )
-                .foregroundStyle(data.steps < 5000 ? .red : Color.customBlue)
+                .foregroundStyle(steps >= viewModel.averageSteps ? Color.customBlue : .customPink)
                 .cornerRadius(10, style: .continuous)
-                
-                
-                
             }
+            RuleMark(y: .value("Average", viewModel.averageSteps))
+                .lineStyle(StrokeStyle(lineWidth: 2, dash: [5, 5]))
+                .foregroundStyle(.customDarkBlue)
         }
         .chartPlotStyle { plotArea in
             plotArea
-                .background(Color.customBlue.opacity(0.3))
-                .border(Color.customBlue)
+                .background(Color.customBlue.opacity(0.1))
         }
         .frame(height: 200)
-        .padding(.horizontal,40)
+        .padding(.horizontal, 40)
+    }
+
+    
+// MARK: Functions
+    private func updateProgress() {
+        viewModel.loadTodayStepCount()
+        viewModel.loadStepCounts()
     }
 }
 
 #Preview {
-    ContentView()
+    MainView()
 }

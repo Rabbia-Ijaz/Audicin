@@ -8,7 +8,7 @@
 import SwiftUI
 import Charts
 
-struct MainView: View {
+struct ContentView: View {
     
     let weeklySteps: [StepData] = [
         StepData(day: "Mon", steps: 3000),
@@ -121,5 +121,5 @@ struct MainView: View {
 }
 
 #Preview {
-    MainView()
+    ContentView()
 }

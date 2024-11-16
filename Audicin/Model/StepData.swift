@@ -6,3 +6,12 @@
 //
 
 import Foundation
+import Charts
+
+struct StepData: Identifiable {
+    let id = UUID()
+    let day: String
+    let steps: Int
+}
+
+

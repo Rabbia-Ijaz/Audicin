@@ -8,17 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		7C0FB3ED2CE7AE1800AB0AB8 /* AudicinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0FB3EC2CE7AE1800AB0AB8 /* AudicinApp.swift */; };
-		7C0FB3EF2CE7AE1800AB0AB8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0FB3EE2CE7AE1800AB0AB8 /* ContentView.swift */; };
+		7C0FB3EF2CE7AE1800AB0AB8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0FB3EE2CE7AE1800AB0AB8 /* MainView.swift */; };
 		7C0FB3F12CE7AE1900AB0AB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C0FB3F02CE7AE1900AB0AB8 /* Assets.xcassets */; };
 		7C0FB3F42CE7AE1900AB0AB8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C0FB3F32CE7AE1900AB0AB8 /* Preview Assets.xcassets */; };
+		7C0FB3FE2CE7C07900AB0AB8 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0FB3FD2CE7C07900AB0AB8 /* Color+Extension.swift */; };
+		7C0FB4002CE7CE0300AB0AB8 /* StepData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0FB3FF2CE7CE0300AB0AB8 /* StepData.swift */; };
+		7C0FB4032CE7D4C200AB0AB8 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0FB4022CE7D4C200AB0AB8 /* HealthKitManager.swift */; };
+		7C0FB4052CE7D53500AB0AB8 /* StepCountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0FB4042CE7D53500AB0AB8 /* StepCountViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7C0FB3E92CE7AE1800AB0AB8 /* Audicin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Audicin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C0FB3EC2CE7AE1800AB0AB8 /* AudicinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudicinApp.swift; sourceTree = "<group>"; };
-		7C0FB3EE2CE7AE1800AB0AB8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7C0FB3EE2CE7AE1800AB0AB8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		7C0FB3F02CE7AE1900AB0AB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C0FB3F32CE7AE1900AB0AB8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7C0FB3FD2CE7C07900AB0AB8 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		7C0FB3FF2CE7CE0300AB0AB8 /* StepData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepData.swift; sourceTree = "<group>"; };
+		7C0FB4012CE7D48D00AB0AB8 /* Audicin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Audicin.entitlements; sourceTree = "<group>"; };
+		7C0FB4022CE7D4C200AB0AB8 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		7C0FB4042CE7D53500AB0AB8 /* StepCountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCountViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +60,15 @@
 		7C0FB3EB2CE7AE1800AB0AB8 /* Audicin */ = {
 			isa = PBXGroup;
 			children = (
+				7C0FB4012CE7D48D00AB0AB8 /* Audicin.entitlements */,
+				7C0FB3FC2CE7AF8800AB0AB8 /* ViewModel */,
+				7C0FB3FB2CE7AF8000AB0AB8 /* Model */,
+				7C0FB3FA2CE7AF7900AB0AB8 /* View */,
 				7C0FB3EC2CE7AE1800AB0AB8 /* AudicinApp.swift */,
-				7C0FB3EE2CE7AE1800AB0AB8 /* ContentView.swift */,
 				7C0FB3F02CE7AE1900AB0AB8 /* Assets.xcassets */,
 				7C0FB3F22CE7AE1900AB0AB8 /* Preview Content */,
+				7C0FB3FD2CE7C07900AB0AB8 /* Color+Extension.swift */,
+				7C0FB4022CE7D4C200AB0AB8 /* HealthKitManager.swift */,
 			);
 			path = Audicin;
 			sourceTree = "<group>";
@@ -65,6 +79,30 @@
 				7C0FB3F32CE7AE1900AB0AB8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7C0FB3FA2CE7AF7900AB0AB8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7C0FB3EE2CE7AE1800AB0AB8 /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7C0FB3FB2CE7AF8000AB0AB8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7C0FB3FF2CE7CE0300AB0AB8 /* StepData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7C0FB3FC2CE7AF8800AB0AB8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7C0FB4042CE7D53500AB0AB8 /* StepCountViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +175,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C0FB3EF2CE7AE1800AB0AB8 /* ContentView.swift in Sources */,
+				7C0FB3FE2CE7C07900AB0AB8 /* Color+Extension.swift in Sources */,
+				7C0FB3EF2CE7AE1800AB0AB8 /* MainView.swift in Sources */,
 				7C0FB3ED2CE7AE1800AB0AB8 /* AudicinApp.swift in Sources */,
+				7C0FB4032CE7D4C200AB0AB8 /* HealthKitManager.swift in Sources */,
+				7C0FB4052CE7D53500AB0AB8 /* StepCountViewModel.swift in Sources */,
+				7C0FB4002CE7CE0300AB0AB8 /* StepData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +311,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Audicin/Audicin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Audicin/Preview Content\"";
@@ -298,6 +341,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Audicin/Audicin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Audicin/Preview Content\"";

@@ -12,13 +12,12 @@ struct TrackView: View {
     @State var chosenTrack: Track
     @State private var isPlaying = false
     
-    @State private var playbackProgress: Double = 0.0 // Track the playback progress
-    private var trackDuration: TimeInterval // Duration in seconds
+    @State private var playbackProgress: Double = 0.0
+    private var trackDuration: TimeInterval
     @State private var currentTimeInterval: TimeInterval = 0
     
     init(chosenTrack: Track) {
         self._chosenTrack = State(initialValue: chosenTrack)
-        // Convert duration string (MM:SS) to TimeInterval (seconds)
         self.trackDuration = TrackView.durationFromString(chosenTrack.duration)
     }
     
@@ -105,7 +104,6 @@ struct TrackView: View {
                 .padding(.horizontal, 20)
             
             HStack {
-                // Play/Pause Button
                 Button(action: togglePlayback) {
                     Image(systemName: isPlaying ? "pause.circle.fill" : "play.circle.fill")
                         .resizable()
@@ -114,8 +112,6 @@ struct TrackView: View {
                         .foregroundStyle(Color.customDarkBlue)
                         .background(.clear)
                 }
-                
-                // Restart Button
                 Button(action: restartPlayback) {
                     Image(systemName: "restart.circle.fill")
                         .resizable()
@@ -128,7 +124,8 @@ struct TrackView: View {
             .padding(.top, 20)
         }
     }
-
+    
+// MARK: Functions
     private func togglePlayback() {
         isPlaying.toggle()
         if isPlaying {
@@ -155,8 +152,8 @@ struct TrackView: View {
                 // Ensure the progress stays within bounds (0.0 to 1.0)
                 if self.currentTimeInterval >= self.trackDuration {
                     self.currentTimeInterval = 0
-                    self.playbackProgress = 0.0 // Max progress
-                    self.isPlaying = false // Stop playback once it's complete
+                    self.playbackProgress = 0.0
+                    self.isPlaying = false
                 } else {
                     self.simulatePlayback() // Keep simulating
                 }
@@ -175,14 +172,13 @@ struct TrackView: View {
         return minutes * 60 + seconds
     }
     // (seconds) to (MM:SS)
-    func secondsToTimeString(seconds: TimeInterval) -> String {
+    private func secondsToTimeString(seconds: TimeInterval) -> String {
         let minutes = Int(seconds) / 60
         let remainingSeconds = Int(seconds) % 60
         return String(format: "%02d:%02d", minutes, remainingSeconds)
     }
 }
 
-// ProgressBar View
 struct ProgressBar: View {
     @Binding var value: Double
     
@@ -199,7 +195,6 @@ struct ProgressBar: View {
         
     }
     private func getValidWidth() -> CGFloat {
-        // Ensure the width is valid (non-negative and within bounds)
         let availableWidth = UIScreen.main.bounds.width - 40
         let calculatedWidth = CGFloat(value) * availableWidth
         return max(0, min(calculatedWidth, availableWidth)) // Ensure it's between 0 and availableWidth

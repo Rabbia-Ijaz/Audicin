@@ -71,12 +71,12 @@ struct PlaylistView: View {
             updateStepCount() // Refresh progress when app enters the foreground
         }
         .onChange(of: viewModel.todayStepCount) {
-            updateStepCount() // Update progress when today's step count changes
+            updateStepCount()
         }
         .navigationDestination(isPresented: $isNavigateToTrack) {
             TrackView(chosenTrack: chosenTrack ?? Track(title: "Not Available", artist: "Not Available", duration: "00:00"))
         }
-        .navigationBarBackButtonHidden(true) // Hide the default back button
+        .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: {

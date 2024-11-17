@@ -29,29 +29,11 @@ struct MainView: View {
                     VStack {
                         if !viewModel.weeklyStepCounts.isEmpty {
                             chartView
-                        } else if let error = viewModel.error {
-                            Text("Error: \(error.localizedDescription)")
                         } else {
                             ProgressView("Loading step data...")
                         }
                     }
-                    Button(action: {
-                        isNavigateToPlaylist = true
-                    }, label: {
-                        HStack {
-                            Image(systemName: "music.note")
-                                .foregroundStyle(Color.customYellow1)
-                            Text("Play Music")
-                                .font(.system(size: 20, weight: .black))
-                                .foregroundStyle(Color.customYellow1)
-                            
-                        }
-                        .frame(height: 54)
-                        .padding(.horizontal,20)
-                        .background(Color.customBlue)
-                        .cornerRadius(27)
-                    })
-                    .padding(.top,30)
+                    playMusicButton
                     
                     Spacer()
                     
@@ -65,10 +47,10 @@ struct MainView: View {
                 updateProgress() // Refresh progress when app enters the foreground
             }
             .onChange(of: viewModel.todayStepCount) {
-                updateProgress() // Update progress when today's step count changes
+                updateProgress()
             }
             .onChange(of: viewModel.weeklyStepCounts) {
-                updateProgress() // Update progress when weekly step counts change
+                updateProgress()
             }
             .onAppear {
                 updateProgress()
@@ -145,6 +127,26 @@ struct MainView: View {
         }
         .frame(height: 200)
         .padding(.horizontal, 40)
+    }
+    
+    var playMusicButton: some View {
+        Button(action: {
+            isNavigateToPlaylist = true
+        }, label: {
+            HStack {
+                Image(systemName: "music.note")
+                    .foregroundStyle(Color.customYellow1)
+                Text("Play Music")
+                    .font(.system(size: 20, weight: .black))
+                    .foregroundStyle(Color.customYellow1)
+                
+            }
+            .frame(height: 54)
+            .padding(.horizontal,20)
+            .background(Color.customBlue)
+            .cornerRadius(27)
+        })
+        .padding(.top,30)
     }
 
     

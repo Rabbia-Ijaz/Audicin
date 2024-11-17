@@ -90,13 +90,13 @@
 		7C0FB3EB2CE7AE1800AB0AB8 /* Audicin */ = {
 			isa = PBXGroup;
 			children = (
-				7C04DEE02CEA0F490088E985 /* Utilities */,
+				7C0FB3EC2CE7AE1800AB0AB8 /* AudicinApp.swift */,
 				7C0FB4012CE7D48D00AB0AB8 /* Audicin.entitlements */,
+				7C04DEE02CEA0F490088E985 /* Utilities */,
 				7C04DEDB2CE931FB0088E985 /* Manager */,
 				7C0FB3FC2CE7AF8800AB0AB8 /* ViewModel */,
 				7C0FB3FB2CE7AF8000AB0AB8 /* Model */,
 				7C0FB3FA2CE7AF7900AB0AB8 /* View */,
-				7C0FB3EC2CE7AE1800AB0AB8 /* AudicinApp.swift */,
 				7C0FB3F22CE7AE1900AB0AB8 /* Preview Content */,
 			);
 			path = Audicin;

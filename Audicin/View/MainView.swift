@@ -62,10 +62,10 @@ struct MainView: View {
     var stepsProgressView: some View {
         ZStack {
             Circle()
-                .stroke(Color.customBlue.opacity(0.2), lineWidth: 20) // Background circle
+                .stroke(Color.customPink.opacity(0.2), lineWidth: 20) // Background circle
             Circle()
                 .trim(from: 0.0, to: viewModel.progress) // Trim based on progress
-                .stroke(Color.customBlue, style: StrokeStyle(lineWidth: 20, lineCap: .round))
+                .stroke(Color.customPink, style: StrokeStyle(lineWidth: 20, lineCap: .round))
                 .rotationEffect(.degrees(-90)) // Start from top
                 .animation(.easeInOut, value: viewModel.progress) // Animate changes
             
@@ -74,11 +74,11 @@ struct MainView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 20)
-                    .foregroundStyle(.customPink)
+                    .foregroundStyle(.customBlue)
                 
                 Text("\(viewModel.todayStepCount)")
                     .font(.system(size: 50, weight: .black))
-                    .foregroundStyle(.customPink)
+                    .foregroundStyle(.customBlue)
                 Text("Goal \(viewModel.averageSteps) Steps")
                     .font(.system(size: 14, weight: .regular))
                     .foregroundStyle(.customDarkBlue)
@@ -138,7 +138,7 @@ struct MainView: View {
                     .foregroundStyle(Color.customYellow1)
                 Text("Play Music")
                     .font(.system(size: 20, weight: .black))
-                    .foregroundStyle(Color.customYellow1)
+                    .foregroundStyle(Color.white)
                 
             }
             .frame(height: 54)

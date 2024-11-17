@@ -74,7 +74,7 @@ struct TrackView: View {
                         HStack {
                             Text("Back")
                                 .font(.system(size: 18, weight: .black))
-                                .foregroundStyle(Color.customYellow1)
+                                .foregroundStyle(Color.white)
                         }
                         .frame(height: 40)
                         .padding(.horizontal, 15)

@@ -85,7 +85,7 @@ struct PlaylistView: View {
                     HStack {
                         Text("Back")
                             .font(.system(size: 18, weight: .black))
-                            .foregroundStyle(Color.customYellow1)
+                            .foregroundStyle(Color.white)
                     }
                     .frame(height: 40)
                     .padding(.horizontal,15)
@@ -166,7 +166,7 @@ struct PlaylistView: View {
                     .foregroundStyle(Color.customYellow1)
                 Text("Browse All Playlists")
                     .font(.system(size: 20, weight: .black))
-                    .foregroundStyle(Color.customYellow1)
+                    .foregroundStyle(Color.white)
                 
             }
             .frame(height: 54)

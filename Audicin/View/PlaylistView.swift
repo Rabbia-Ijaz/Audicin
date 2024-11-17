@@ -14,30 +14,50 @@ struct PlaylistView: View {
     @State private var playlistChoice: PlaylistType?
     @State private var filteredPlaylist: Playlist?
     @State private var filteredTracks: [Track]?
+    @State private var chosenTrack: Track?
+    @State private var isNavigateToTrack = false
     
     var body: some View {
         ZStack{
             Color("customYellow").opacity(0.2).ignoresSafeArea()
-            VStack() {
-                VStack(spacing:5) {
-                    Text(playlistChoice?.title ?? "")
-                        .font(.system(size: 24, weight: .black))
-                        .foregroundStyle(Color.customDarkBlue)
-                    Text(playlistChoice?.description ?? "")
-                        .font(.system(size: 12, weight: .light))
+            
+            if let playlistChoice = playlistChoice {
+                VStack() {
+                    VStack(spacing:5) {
+                        Text(playlistChoice.title)
+                            .font(.system(size: 24, weight: .black))
+                            .foregroundStyle(Color.customDarkBlue)
+                        Text(playlistChoice.description)
+                            .font(.system(size: 12, weight: .light))
+                            .foregroundStyle(Color.customDarkBlue)
+                            .multilineTextAlignment(.center)
+                    }
+                    .padding(.top,20)
+                    .padding(.horizontal,20)
+                    
+                    playlistView
+                    
+                    refreshPlaylist
+                    
+                    Spacer()
+                    
+                    browseAllPlaylists
+                }
+            }
+            else {
+                VStack(spacing:10) {
+                    Spacer()
+                    Text("Give Permissions")
+                        .font(.system(size: 24, weight: .bold))
                         .foregroundStyle(Color.customDarkBlue)
                         .multilineTextAlignment(.center)
+                    Text("Settings > Health > Data Access & Devices > Choose 'Audicin' in Apps and Services")
+                        .font(.system(size: 18, weight: .light))
+                        .foregroundStyle(Color.customDarkBlue)
+                        .multilineTextAlignment(.center)
+                    Spacer()
                 }
-                .padding(.top,20)
                 .padding(.horizontal,20)
-                
-                playlistView
-                
-                refreshPlaylist
-
-                Spacer()
-                
-                browseAllPlaylists
             }
         }
         .onAppear() {
@@ -52,6 +72,9 @@ struct PlaylistView: View {
         }
         .onChange(of: viewModel.todayStepCount) {
             updateStepCount() // Update progress when today's step count changes
+        }
+        .navigationDestination(isPresented: $isNavigateToTrack) {
+            TrackView(chosenTrack: chosenTrack ?? Track(title: "Not Available", artist: "Not Available", duration: "00:00"))
         }
         .navigationBarBackButtonHidden(true) // Hide the default back button
         .toolbar {
@@ -80,7 +103,8 @@ struct PlaylistView: View {
                     ForEach(playlist, id: \.title) {
                         track in
                         Button(action: {
-                            //
+                            chosenTrack = track
+                            isNavigateToTrack = true
                         }, label: {
                             HStack(alignment: .top) {
                                 

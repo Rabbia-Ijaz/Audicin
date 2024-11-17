@@ -39,54 +39,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4A59DA1B-F692-41D4-89FF-4BA0061FFDAB"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Audicin/View/PlaylistView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "body"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "4A59DA1B-F692-41D4-89FF-4BA0061FFDAB - c52e6901ecb03b3c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 () -&gt; () in Audicin.StepCountView.body.getter : some"
-                  moduleName = "Audicin"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rabbiaijaz/Documents/Projects/Audicin/Audicin/View/PlaylistView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "94"
-                  endingLineNumber = "94"
-                  offsetFromSymbolStart = "164">
-               </Location>
-               <Location
-                  uuid = "4A59DA1B-F692-41D4-89FF-4BA0061FFDAB - 2184e5cd0f3cc8d0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 () -&gt; () in Audicin.PlaylistView.body.getter : some"
-                  moduleName = "Audicin"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rabbiaijaz/Documents/Projects/Audicin/Audicin/View/PlaylistView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "94"
-                  endingLineNumber = "94"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "A9BFCF7C-F61E-4610-8EA5-166804066EB1"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -135,15 +87,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C6F6C86B-FEAE-48FE-89B8-A140BD49BCB3"
-            shouldBeEnabled = "Yes"
+            uuid = "5E632EFF-1F42-4540-B063-D6CA25934580"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Audicin/View/PlaylistView.swift"
+            filePath = "Audicin/View/TrackView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -151,33 +103,129 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4597ABF7-E93B-4C57-91A5-18F9422CBED1"
+            uuid = "BAB61D16-9FE7-4AF7-A288-54D1DABE34CB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Audicin/View/PlaylistView.swift"
+            filePath = "Audicin/View/TrackView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "body"
-            landmarkType = "24">
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "togglePlayback()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "87242981-6EB9-4629-A70C-58808E2683DA"
+            uuid = "49774834-1B11-4B92-9B03-2E2534FD1C1D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Audicin/View/PlaylistView.swift"
+            filePath = "Audicin/View/TrackView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "body"
-            landmarkType = "24">
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "togglePlayback()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9713B5AC-CA45-4FC5-B4EF-E4CD75EA2690"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Audicin/ViewModel/PlaylistViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "loadTodayStepCount()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9713B5AC-CA45-4FC5-B4EF-E4CD75EA2690 - 8b82cb200e91c8ef"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Audicin.PlaylistViewModel.loadTodayStepCount() -&gt; ()"
+                  moduleName = "Audicin"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rabbiaijaz/Documents/Projects/Audicin/Audicin/ViewModel/PlaylistViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "616">
+               </Location>
+               <Location
+                  uuid = "9713B5AC-CA45-4FC5-B4EF-E4CD75EA2690 - 8b82cb200e91c8ef"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Audicin.PlaylistViewModel.loadTodayStepCount() -&gt; ()"
+                  moduleName = "Audicin"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rabbiaijaz/Documents/Projects/Audicin/Audicin/ViewModel/PlaylistViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "448">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "00D059A9-44AE-454C-9EF3-228310C91829"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Audicin/ViewModel/PlaylistViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "loadTodayStepCount()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "00D059A9-44AE-454C-9EF3-228310C91829 - 8b82cb200e91cb4c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Audicin.PlaylistViewModel.loadTodayStepCount() -&gt; ()"
+                  moduleName = "Audicin"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rabbiaijaz/Documents/Projects/Audicin/Audicin/ViewModel/PlaylistViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "212">
+               </Location>
+               <Location
+                  uuid = "00D059A9-44AE-454C-9EF3-228310C91829 - 8b82cb200e91cb4c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Audicin.PlaylistViewModel.loadTodayStepCount() -&gt; ()"
+                  moduleName = "Audicin"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rabbiaijaz/Documents/Projects/Audicin/Audicin/ViewModel/PlaylistViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "200">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

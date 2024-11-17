@@ -35,7 +35,7 @@ enum PlaylistType: String, Codable {
         case .energizing:
             return "Boost your energy with upbeat tunes!"
         case .all:
-            return "A diverse mix of the best tracks from every genre. Whether you're into pop, rock, classical, or electronic, this playlist has something for everyone."
+            return "A diverse mix of the best tracks from every genre. Whether you're into relaxed, focused, or energizing music, this playlist has something for everyone."
         }
     }
     

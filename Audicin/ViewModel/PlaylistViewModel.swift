@@ -38,18 +38,21 @@ class PlaylistViewModel: ObservableObject {
                 if let stepCount = stepCount {
                     self?.todayStepCount = stepCount
                 } else {
-                    print(error)
+                    self?.todayStepCount = 0
+                    print(error ?? "Error while fetching the data")
                 }
             }
         }
     }
     
-    func playlistForStepCount() -> PlaylistType {
+    func playlistForStepCount() -> PlaylistType? {
         loadTodayStepCount()
         switch todayStepCount {
-        case 0..<5000:
+        case 0:
+            return nil
+        case 1..<5000:
             return .relaxing
-        case 5000..<11000:
+        case 5000..<15000:
             return .focused
         default:
             return .energizing

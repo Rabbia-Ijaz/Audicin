@@ -19,10 +19,10 @@ A SwiftUI-based music player app that combines step count tracking and music rec
 ## Screenshots
 
 <div style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap;">
-  <img src="https://github.com/user-attachments/assets/d3b91eb7-a57c-4864-a3c1-a09874fef243" alt="Main Screen" width="200"/>
-  <img src="https://github.com/user-attachments/assets/38897ffc-5582-406d-8090-a65630c94257" alt="Playlist Screen (recommended)" width="200"/>
-  <img src="https://github.com/user-attachments/assets/d7916d3b-0d8a-4d44-8334-748ed3e57e99" alt="Playlist Screen (all)" width="200"/>
-  <img src="https://github.com/user-attachments/assets/2cd51fd3-ae1c-4c4c-929a-764766950fd2" alt="Track Screen" width="200"/>
+  <img src="https://github.com/user-attachments/assets/dba09b20-af8d-4189-8366-43ebaa892da8" alt="Main Screen" width="200"/>
+  <img src="https://github.com/user-attachments/assets/b6b25901-2cca-413b-a1ac-40dc98e7aeb3" alt="Playlist Screen (recommended)" width="200"/>
+  <img src="https://github.com/user-attachments/assets/ed291930-ce50-4b58-aff0-ddf5bb69bd0b" alt="Playlist Screen (all)" width="200"/>
+  <img src="https://github.com/user-attachments/assets/15092678-ac56-454c-888b-68c0103bad27" alt="Track Screen" width="200"/>
 </div>
 
 ## Trade-offs  

@@ -9,63 +9,70 @@ import SwiftUI
 import Charts
 
 struct MainView: View {
-   
+
     @StateObject private var viewModel = MainViewModel()
+    @State private var isNavigateToPlaylist = false
     
     var body: some View {
-        ZStack{
-            Color("customYellow").opacity(0.2).ignoresSafeArea()
-            VStack(spacing: 10) {
-                Spacer()
-                
-                stepsProgressView
-                
-                Spacer()
-                
-                averageStepsView
-                
-                VStack {
-                    if !viewModel.weeklyStepCounts.isEmpty {
-                        chartView
-                    } else if let error = viewModel.error {
-                        Text("Error: \(error.localizedDescription)")
-                    } else {
-                        ProgressView("Loading step data...")
-                    }
-                }
-                Button(action: {
+        NavigationStack {
+            ZStack{
+                Color("customYellow").opacity(0.2).ignoresSafeArea()
+                VStack(spacing: 10) {
+                    Spacer()
                     
-                }, label: {
-                    HStack {
-                        Image(systemName: "music.note")
-                            .foregroundStyle(Color.customYellow1)
-                        Text("Play Music")
-                            .font(.system(size: 20, weight: .black))
-                            .foregroundStyle(Color.customYellow1)
-                        
+                    stepsProgressView
+                    
+                    Spacer()
+                    
+                    averageStepsView
+                    
+                    VStack {
+                        if !viewModel.weeklyStepCounts.isEmpty {
+                            chartView
+                        } else if let error = viewModel.error {
+                            Text("Error: \(error.localizedDescription)")
+                        } else {
+                            ProgressView("Loading step data...")
+                        }
                     }
-                    .frame(height: 54)
-                    .padding(.horizontal,20)
-                    .background(Color.customBlue)
-                    .cornerRadius(27)
-                })
-                .padding(.top,30)
-                
-                Spacer()
-                
+                    Button(action: {
+                        isNavigateToPlaylist = true
+                    }, label: {
+                        HStack {
+                            Image(systemName: "music.note")
+                                .foregroundStyle(Color.customYellow1)
+                            Text("Play Music")
+                                .font(.system(size: 20, weight: .black))
+                                .foregroundStyle(Color.customYellow1)
+                            
+                        }
+                        .frame(height: 54)
+                        .padding(.horizontal,20)
+                        .background(Color.customBlue)
+                        .cornerRadius(27)
+                    })
+                    .padding(.top,30)
+                    
+                    Spacer()
+                    
+                }
             }
-        }
-        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
-            updateProgress() // Refresh progress when app enters the foreground
-        }
-        .onChange(of: viewModel.todayStepCount) {
-            updateProgress() // Update progress when today's step count changes
-        }
-        .onChange(of: viewModel.weeklyStepCounts) {
-            updateProgress() // Update progress when weekly step counts change
-        }
-        .onAppear {
-            updateProgress()
+            
+            .navigationDestination(isPresented: $isNavigateToPlaylist) {
+                PlaylistView()
+            }
+            .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+                updateProgress() // Refresh progress when app enters the foreground
+            }
+            .onChange(of: viewModel.todayStepCount) {
+                updateProgress() // Update progress when today's step count changes
+            }
+            .onChange(of: viewModel.weeklyStepCounts) {
+                updateProgress() // Update progress when weekly step counts change
+            }
+            .onAppear {
+                updateProgress()
+            }
         }
     }
     

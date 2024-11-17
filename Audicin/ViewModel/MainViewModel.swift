@@ -7,7 +7,7 @@ class MainViewModel: ObservableObject {
     @Published var averageSteps: Int = 0
     @Published var progress: Double = 0.0
     @Published var error: Error?
-
+    
     private let manager = StepCountManager()
     private let healthKitManager = HealthKitManager()
     
@@ -48,4 +48,5 @@ class MainViewModel: ObservableObject {
             }
         }
     }
+    
 }

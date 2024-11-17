@@ -1,0 +1,101 @@
+[
+  {
+    "type": "relaxing",
+    "title": "Relaxing Vibes",
+    "description": "Unwind and relax with these soothing tunes.",
+    "imageName": "relaxing_image",
+    "tracks": [
+      {
+        "title": "Ocean Breeze",
+        "artist": "Nature Escape",
+        "duration": "5:00"
+      },
+      {
+        "title": "Evening Serenity",
+        "artist": "Meditative Sounds",
+        "duration": "4:32"
+      },
+      {
+        "title": "Whispering Winds",
+        "artist": "Peaceful Harmonies",
+        "duration": "6:15"
+      },
+      {
+        "title": "Gentle Rainfall",
+        "artist": "Ambient Nature",
+        "duration": "3:58"
+      },
+      {
+        "title": "Calm Horizon",
+        "artist": "Dreamy Tones",
+        "duration": "4:45"
+      }
+    ]
+  },
+  {
+    "type": "focused",
+    "title": "Focused Beats",
+    "description": "Stay productive with these concentration-enhancing tracks.",
+    "imageName": "focused_image",
+    "tracks": [
+      {
+        "title": "Alpha Waves",
+        "artist": "Brain Boost",
+        "duration": "5:45"
+      },
+      {
+        "title": "Study Flow",
+        "artist": "Concentration Tracks",
+        "duration": "6:30"
+      },
+      {
+        "title": "Clarity Boost",
+        "artist": "Focus Zone",
+        "duration": "4:50"
+      },
+      {
+        "title": "Work Energy",
+        "artist": "Productive Rhythms",
+        "duration": "5:10"
+      },
+      {
+        "title": "Beta State",
+        "artist": "Mind Waves",
+        "duration": "7:20"
+      }
+    ]
+  },
+  {
+    "type": "energizing",
+    "title": "Energizing Hits",
+    "description": "Boost your energy with these high-tempo hits.",
+    "imageName": "energizing_image",
+    "tracks": [
+      {
+        "title": "Adrenaline Rush",
+        "artist": "High Tempo",
+        "duration": "3:45"
+      },
+      {
+        "title": "Run Wild",
+        "artist": "Energy Boost",
+        "duration": "4:20"
+      },
+      {
+        "title": "Pump It Up",
+        "artist": "Workout Beats",
+        "duration": "5:00"
+      },
+      {
+        "title": "Turbo Mode",
+        "artist": "Upbeat Tracks",
+        "duration": "4:35"
+      },
+      {
+        "title": "Energize Now",
+        "artist": "Fast Beats",
+        "duration": "4:10"
+      }
+    ]
+  }
+]
